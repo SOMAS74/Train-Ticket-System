@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Receipt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 50px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ticket Receipt</h1>
+    <p>From: <span th:text="${ticket.from}"></span></p>
+    <p>To: <span th:text="${ticket.to}"></span></p>
+    <p>First Name: <span th:text="${ticket.firstName}"></span></p>
+    <p>Last Name: <span th:text="${ticket.lastName}"></span></p>
+    <p>Email: <span th:text="${ticket.email}"></span></p>
+    <p>Price: <span th:text="${ticket.price}"></span></p>
+
+    <a href="/api/train/backToPurchase">Back to Purchase Page</a>
+</body>
+</html>
