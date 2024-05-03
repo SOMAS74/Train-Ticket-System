@@ -6,7 +6,7 @@
         "date": "2023-08-14T04:45:06Z",
         "stateValidation": "VALIDATED",
         "author": "MEKATHIYAR ABDUL LATHEEF Ahamed Atheeq \u003cahamed-atheeq.a.mekathiyar-abdul-latheef@rntbci.com\u003e",
-        "dataModelVersion": "4.2.2"
+        "dataModelVersion": "4.2.3"
     },
     "isSynchronized": true,
     "name": "TF03 Target following (Acceleration)",
