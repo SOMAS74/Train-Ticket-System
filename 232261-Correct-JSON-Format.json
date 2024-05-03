@@ -1,0 +1,769 @@
+{
+    "id": 232261,
+    "type": "LOGICAL",
+    "metadata": {
+        "version": "1.0",
+        "date": "2023-08-14T04:45:06Z",
+        "stateValidation": "VALIDATED",
+        "author": "MEKATHIYAR ABDUL LATHEEF Ahamed Atheeq \u003cahamed-atheeq.a.mekathiyar-abdul-latheef@rntbci.com\u003e",
+        "dataModelVersion": "4.2.2"
+    },
+    "isSynchronized": true,
+    "name": "TF03 Target following (Acceleration)",
+    "description": "EGO detects that the target vehicle accelerates. Hence, EGO also accelerates\n\nInitial scene:\n        EGO follows the Target Vehicle\nEvent:\n        Target vehicle accelerates\nTransition:\n        Target vehicle\u0027s new speed lies within the EGO\u0027s set speed limit. Hence, EGO also accelerates to keep the distance stetting.\nFinal scene:\n        EGO continues to follow the target vehicle\n        \n",
+    "image": "743122-FUp_4691670429324606095_upload",
+    "parent": 232901,
+    "origin": "DRIVING",
+    "steps": [
+        {
+            "id": 1691747118995000,
+            "name": "Initial Condition",
+            "timing": {
+                "value": {
+                    "value": {}
+                }
+            },
+            "description": "EGO follows the Target Vehicle",
+            "image": "9a4cb8-b1b5f889-547e-4ec2-8619-01e208d70f38_1691992898210.png",
+            "actorsState": [
+                {
+                    "dynamic": {
+                        "lateralPosition": {
+                            "positionType": "ABSOLUTE",
+                            "segment": 1,
+                            "strip": 3,
+                            "shift": {
+                                "value": {
+                                    "unit": "p.d.u.",
+                                    "concrete": 0
+                                }
+                            }
+                        },
+                        "longitudinalPosition": {
+                            "reference": 1687757543302000,
+                            "position": {
+                                "value": {
+                                    "unit": "m",
+                                    "abstracted": "BEHIND"
+                                }
+                            }
+                        },
+                        "speed": {
+                            "reference": 1687757543302000,
+                            "speed": {
+                                "value": {
+                                    "unit": "km/h",
+                                    "concrete": 0
+                                }
+                            }
+                        },
+                        "angle": {
+                            "value": {
+                                "unit": "°",
+                                "concrete": 0
+                            }
+                        }
+                    },
+                    "equipmentsState": [
+                        {
+                            "equipmentId": 1695651130359000,
+                            "values": [
+                                {
+                                    "value": {
+                                        "abstracted": "ON"
+                                    }
+                                },
+                                {
+                                    "value": {
+                                        "unit": "kph",
+                                        "min": 0,
+                                        "minExclusive": true
+                                    }
+                                },
+                                {
+                                    "value": {}
+                                },
+                                {
+                                    "value": {}
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "dynamic": {
+                        "lateralPosition": {
+                            "positionType": "ABSOLUTE",
+                            "segment": 1,
+                            "strip": 3,
+                            "shift": {
+                                "value": {
+                                    "unit": "p.d.u.",
+                                    "concrete": 0
+                                }
+                            }
+                        },
+                        "longitudinalPosition": {
+                            "reference": -1,
+                            "position": {
+                                "value": {
+                                    "unit": "m",
+                                    "abstracted": "FAR_AHEAD"
+                                }
+                            }
+                        },
+                        "speed": {
+                            "reference": 0,
+                            "speed": {
+                                "value": {
+                                    "unit": "km/h",
+                                    "min": 0
+                                }
+                            }
+                        },
+                        "angle": {
+                            "value": {
+                                "unit": "°",
+                                "concrete": 0
+                            }
+                        }
+                    },
+                    "equipmentsState": []
+                }
+            ],
+            "elementsState": []
+        },
+        {
+            "id": 1687153248730000,
+            "name": "Event",
+            "timing": {
+                "reference": 1691747118995000,
+                "value": {
+                    "value": {
+                        "unit": "s",
+                        "min": 4
+                    }
+                }
+            },
+            "description": "Target Vehicle accelerates",
+            "image": "af6086-53570752-7ac9-4fde-9bae-4493ba145592_1691993192662.png",
+            "actorsState": [
+                {
+                    "dynamic": {
+                        "lateralPosition": {
+                            "positionType": "ABSOLUTE",
+                            "segment": 1,
+                            "strip": 3,
+                            "shift": {
+                                "value": {
+                                    "unit": "p.d.u.",
+                                    "concrete": 0
+                                }
+                            }
+                        },
+                        "longitudinalPosition": {
+                            "reference": 1687757543302000,
+                            "position": {
+                                "value": {
+                                    "unit": "m",
+                                    "abstracted": "FAR_BEHIND"
+                                }
+                            }
+                        },
+                        "speed": {
+                            "reference": 1687757543302000,
+                            "speed": {
+                                "value": {
+                                    "unit": "km/h",
+                                    "concrete": 0
+                                }
+                            }
+                        },
+                        "angle": {
+                            "value": {
+                                "unit": "°",
+                                "concrete": 0
+                            }
+                        }
+                    },
+                    "equipmentsState": [
+                        {
+                            "equipmentId": 1695651130359000,
+                            "values": [
+                                {
+                                    "value": {
+                                        "abstracted": "ON"
+                                    }
+                                },
+                                {
+                                    "value": {
+                                        "unit": "kph",
+                                        "min": 0,
+                                        "minExclusive": true
+                                    }
+                                },
+                                {
+                                    "value": {}
+                                },
+                                {
+                                    "value": {}
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "dynamic": {
+                        "lateralPosition": {
+                            "positionType": "ABSOLUTE",
+                            "segment": 1,
+                            "strip": 3,
+                            "shift": {
+                                "value": {
+                                    "unit": "p.d.u.",
+                                    "concrete": 0
+                                }
+                            }
+                        },
+                        "longitudinalPosition": {
+                            "reference": -1,
+                            "position": {
+                                "value": {
+                                    "unit": "m",
+                                    "abstracted": "FAR_AHEAD"
+                                }
+                            }
+                        },
+                        "speed": {
+                            "reference": 0,
+                            "speed": {
+                                "value": {
+                                    "unit": "km/h",
+                                    "min": 0
+                                }
+                            }
+                        },
+                        "angle": {
+                            "value": {
+                                "unit": "°",
+                                "concrete": 0
+                            }
+                        }
+                    },
+                    "equipmentsState": []
+                }
+            ],
+            "elementsState": []
+        },
+        {
+            "id": 1687154778394000,
+            "name": "Transition",
+            "timing": {
+                "value": {
+                    "value": {}
+                }
+            },
+            "description": "End of Target vehicle acceleration. EGO also accelerates",
+            "image": "79359d-bc9dbdf7-209d-43a1-a5c4-40bb00929aa6_1691988944475.png",
+            "actorsState": [
+                {
+                    "dynamic": {
+                        "lateralPosition": {
+                            "positionType": "ABSOLUTE",
+                            "segment": 1,
+                            "strip": 3,
+                            "shift": {
+                                "value": {
+                                    "unit": "p.d.u.",
+                                    "concrete": 0
+                                }
+                            }
+                        },
+                        "longitudinalPosition": {
+                            "reference": 1687757543302000,
+                            "position": {
+                                "value": {
+                                    "unit": "m",
+                                    "abstracted": "FAR_BEHIND"
+                                }
+                            }
+                        },
+                        "speed": {
+                            "reference": 1687757543302000,
+                            "speed": {
+                                "value": {
+                                    "unit": "km/h",
+                                    "max": 0,
+                                    "maxExclusive": true
+                                }
+                            }
+                        },
+                        "angle": {
+                            "value": {
+                                "unit": "°",
+                                "concrete": 0
+                            }
+                        }
+                    },
+                    "equipmentsState": [
+                        {
+                            "equipmentId": 1695651130359000,
+                            "values": [
+                                {
+                                    "value": {
+                                        "abstracted": "ON"
+                                    }
+                                },
+                                {
+                                    "value": {
+                                        "unit": "kph",
+                                        "min": 0,
+                                        "minExclusive": true
+                                    }
+                                },
+                                {
+                                    "value": {}
+                                },
+                                {
+                                    "value": {}
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "dynamic": {
+                        "lateralPosition": {
+                            "positionType": "ABSOLUTE",
+                            "segment": 1,
+                            "strip": 3,
+                            "shift": {
+                                "value": {
+                                    "unit": "p.d.u.",
+                                    "concrete": 0
+                                }
+                            }
+                        },
+                        "longitudinalPosition": {
+                            "reference": -1,
+                            "position": {
+                                "value": {
+                                    "unit": "m",
+                                    "abstracted": "FAR_AHEAD"
+                                }
+                            }
+                        },
+                        "speed": {
+                            "reference": 0,
+                            "speed": {
+                                "value": {
+                                    "unit": "km/h",
+                                    "min": 0
+                                }
+                            }
+                        },
+                        "angle": {
+                            "value": {
+                                "unit": "°",
+                                "concrete": 0
+                            }
+                        }
+                    },
+                    "equipmentsState": []
+                }
+            ],
+            "elementsState": []
+        },
+        {
+            "id": 1687154782805000,
+            "name": "Final Condition",
+            "timing": {
+                "value": {
+                    "value": {}
+                }
+            },
+            "description": "EGO continues to follow the target vehicle",
+            "image": "06eed4-bea69e32-ebf9-4f42-ac19-262e08c860cc_1691989000843.png",
+            "actorsState": [
+                {
+                    "dynamic": {
+                        "lateralPosition": {
+                            "positionType": "ABSOLUTE",
+                            "segment": 1,
+                            "strip": 3,
+                            "shift": {
+                                "value": {
+                                    "unit": "p.d.u.",
+                                    "concrete": 0
+                                }
+                            }
+                        },
+                        "longitudinalPosition": {
+                            "reference": 1687757543302000,
+                            "position": {
+                                "value": {
+                                    "unit": "m",
+                                    "abstracted": "BEHIND"
+                                }
+                            }
+                        },
+                        "speed": {
+                            "reference": 1687757543302000,
+                            "speed": {
+                                "value": {
+                                    "unit": "km/h",
+                                    "concrete": 0
+                                }
+                            }
+                        },
+                        "angle": {
+                            "value": {
+                                "unit": "°",
+                                "concrete": 0
+                            }
+                        }
+                    },
+                    "equipmentsState": [
+                        {
+                            "equipmentId": 1695651130359000,
+                            "values": [
+                                {
+                                    "value": {
+                                        "abstracted": "ON"
+                                    }
+                                },
+                                {
+                                    "value": {
+                                        "unit": "kph",
+                                        "min": 0,
+                                        "minExclusive": true
+                                    }
+                                },
+                                {
+                                    "value": {}
+                                },
+                                {
+                                    "value": {}
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "dynamic": {
+                        "lateralPosition": {
+                            "positionType": "ABSOLUTE",
+                            "segment": 1,
+                            "strip": 3,
+                            "shift": {
+                                "value": {
+                                    "unit": "p.d.u.",
+                                    "concrete": 0
+                                }
+                            }
+                        },
+                        "longitudinalPosition": {
+                            "reference": -1,
+                            "position": {
+                                "value": {
+                                    "unit": "m",
+                                    "abstracted": "FAR_AHEAD"
+                                }
+                            }
+                        },
+                        "speed": {
+                            "reference": 0,
+                            "speed": {
+                                "value": {
+                                    "unit": "km/h",
+                                    "min": 0
+                                }
+                            }
+                        },
+                        "angle": {
+                            "value": {
+                                "unit": "°",
+                                "concrete": 0
+                            }
+                        }
+                    },
+                    "equipmentsState": []
+                }
+            ],
+            "elementsState": []
+        }
+    ],
+    "actors": [
+        {
+            "id": 1687757535749000,
+            "parent": 1583750104149000,
+            "path": "1583498243005000/Regular Road User/Category M/M1/blue vehicle",
+            "attachment": {},
+            "name": "EGO",
+            "description": "blue vehicle is by convention EGO vehicle.\n\nor VUT : Vehicule Under Test\nor SV : Subject Vehicle\n",
+            "image": "",
+            "actorType": "ROAD_VEHICLE",
+            "sprite": "bc6247-9cdcc903-da5b-405a-9082-91fa8d7adeb4_bluevehicle.png",
+            "equipments": [
+                {
+                    "id": 1695651130359000,
+                    "parent": 1677762500824000,
+                    "path": "1601537449834000/ADAS-AD/CC incl. ACC",
+                    "attachment": {},
+                    "name": "CC incl. ACC",
+                    "description": "Cruise Control Systems including \n- Cruise Control\n- Adaptive Cruise Control",
+                    "image": "",
+                    "sprite": "",
+                    "switchable": false,
+                    "parameters": [
+                        {
+                            "type": "PARAMETER",
+                            "name": "CC_activation",
+                            "description": "Activation of the system",
+                            "abstractValues": [
+                                "ON",
+                                "OFF"
+                            ]
+                        },
+                        {
+                            "type": "PARAMETER",
+                            "name": "CC_set_speed",
+                            "description": "Speed set by the driver as vehicle expected speed",
+                            "unit": "kph",
+                            "abstractValues": []
+                        },
+                        {
+                            "type": "PARAMETER",
+                            "name": "CC_state",
+                            "description": "Cruise Control status",
+                            "abstractValues": [
+                                "Speed_Control",
+                                "Stand by ",
+                                "Distance_Control",
+                                "Target detected",
+                                "Overriden"
+                            ]
+                        },
+                        {
+                            "type": "PARAMETER",
+                            "name": "CC_distance_setting",
+                            "description": "Distance Setting",
+                            "unit": "-",
+                            "abstractValues": [
+                                "Short",
+                                "Middle",
+                                "Reglementary",
+                                "Long"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1687757543302000,
+            "parent": 1583750104149000,
+            "path": "1583498243005000/Regular Road User/Category M/M1/red vehicle - lead vehicle",
+            "attachment": {},
+            "name": "Lead vehicle",
+            "description": "red vehicle is by convention the preceding vehicle in the lane of EGO vehicle. \n\n",
+            "image": "",
+            "actorType": "ROAD_VEHICLE",
+            "sprite": "0abe01-21c6e555-3616-4068-89ad-f3b3aac858b9_redvehicle.png",
+            "equipments": []
+        }
+    ],
+    "infrastructure": {
+        "id": 1691746577692000,
+        "name": "2 way unidirectional",
+        "description": "Lane 2 left \u0026 right lane markings \u0026 traffic direction of lane 1 can vary (INPUT)",
+        "parent": 1594229330548000,
+        "path": "1583831269350000/Expressway and highway/Current section/2 way unidirectional",
+        "attachment": {},
+        "image": "c1ffc8-b178aa23-c9e4-458f-88a6-a597172f6be2_1580998604756.png",
+        "sprite": "",
+        "segments": [
+            {
+                "id": 1,
+                "name": "Segment 1",
+                "type": "STANDARD_HIGHWAY",
+                "strips": [
+                    {
+                        "id": 1,
+                        "name": "Road verge 1",
+                        "type": "ROAD_VERGE",
+                        "rightMarking": {
+                            "type": "CONTINUOUS_LINE",
+                            "marking": {
+                                "color": "WHITE",
+                                "degradation": {
+                                    "value": {}
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "id": 2,
+                        "name": "Traffic lane 1",
+                        "type": "TRAFFIC_LANE",
+                        "trafficDirection": {
+                            "trafficDirection": "NORMAL"
+                        },
+                        "leftMarking": {
+                            "type": "CONTINUOUS_LINE",
+                            "marking": {
+                                "color": "WHITE",
+                                "degradation": {
+                                    "value": {}
+                                }
+                            }
+                        },
+                        "rightMarking": {
+                            "type": "DASHED_SEPARATING_TRAFFIC_LANE_LINE",
+                            "marking": {
+                                "color": "WHITE",
+                                "degradation": {
+                                    "value": {}
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "id": 3,
+                        "name": "Traffic lane 2",
+                        "type": "TRAFFIC_LANE",
+                        "trafficDirection": {
+                            "trafficDirection": "NORMAL"
+                        },
+                        "leftMarking": {
+                            "type": "DASHED_SEPARATING_TRAFFIC_LANE_LINE",
+                            "marking": {
+                                "color": "WHITE",
+                                "degradation": {
+                                    "value": {}
+                                }
+                            }
+                        },
+                        "rightMarking": {
+                            "type": "CONTINUOUS_LINE",
+                            "marking": {
+                                "color": "WHITE",
+                                "degradation": {
+                                    "value": {}
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "id": 5,
+                        "name": "Road verge 2",
+                        "type": "ROAD_VERGE"
+                    }
+                ],
+                "elements": []
+            }
+        ]
+    },
+    "traceability": {
+        "source": "UseCase List_TPV_V13.xlsx",
+        "database": "UseCase List_TPV_V13",
+        "originId": "TF03"
+    },
+    "attachments": [],
+    "simulation": {
+        "ego": 1687757535749000,
+        "t0": 1687153248730000,
+        "specifications": ""
+    },
+    "behaviorStates": [
+        {
+            "behavior": {
+                "id": 1691988699992000,
+                "parent": 1586854789422000,
+                "path": "1591784886139000/Actions/Acceleration",
+                "attachment": {},
+                "name": "Acceleration",
+                "description": "The actor increases its speed",
+                "sprite": "1e7c73-eef1ab16-80d7-47b6-8661-ef76e98fc4d0_accelerate-sprite.png",
+                "parameters": [
+                    {
+                        "type": "PARAMETER",
+                        "name": "Lag",
+                        "description": "The timing between the application of the throttle pedal and the initiation of the vehicle response",
+                        "unit": "s",
+                        "abstractValues": [
+                            "LOW",
+                            "HIGH"
+                        ]
+                    },
+                    {
+                        "type": "PARAMETER",
+                        "name": "Type",
+                        "description": "value in m/s² of the acceleration",
+                        "unit": "m/s²",
+                        "abstractValues": []
+                    }
+                ]
+            },
+            "actorId": 1687757543302000,
+            "from": 1687153248730000,
+            "to": 1687154778394000,
+            "values": [
+                {
+                    "value": {
+                        "unit": "s"
+                    }
+                },
+                {
+                    "value": {
+                        "unit": "m/s²",
+                        "min": 0,
+                        "minExclusive": true
+                    }
+                }
+            ]
+        },
+        {
+            "behavior": {
+                "id": 1691988768553000,
+                "parent": 1586854789422000,
+                "path": "1591784886139000/Actions/Acceleration",
+                "attachment": {},
+                "name": "Acceleration",
+                "description": "The actor increases its speed",
+                "sprite": "1e7c73-eef1ab16-80d7-47b6-8661-ef76e98fc4d0_accelerate-sprite.png",
+                "parameters": [
+                    {
+                        "type": "PARAMETER",
+                        "name": "Lag",
+                        "description": "The timing between the application of the throttle pedal and the initiation of the vehicle response",
+                        "unit": "s",
+                        "abstractValues": [
+                            "LOW",
+                            "HIGH"
+                        ]
+                    },
+                    {
+                        "type": "PARAMETER",
+                        "name": "Type",
+                        "description": "value in m/s² of the acceleration",
+                        "unit": "m/s²",
+                        "abstractValues": []
+                    }
+                ]
+            },
+            "actorId": 1687757535749000,
+            "from": 1687154778394000,
+            "to": 1687154782805000,
+            "values": [
+                {
+                    "value": {
+                        "unit": "s"
+                    }
+                },
+                {}
+            ]
+        }
+    ],
+    "tags": []
+}
